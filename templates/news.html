@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}Latest Magical News{% endblock %}
+
+{% block content %}
+<style>
+    .news-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        font-family: 'Georgia', serif;
+        line-height: 1.8;
+        color: #e0e0e0;
+    }
+
+    .news-container h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        color: #f5c542;
+        text-align: center;
+    }
+
+    .news-container em {
+        display: block;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        color: #aaa;
+        text-align: center;
+    }
+
+    .news-container p {
+        margin-bottom: 1.4rem;
+        font-size: 1.8rem;
+    }
+    .news-message {
+        max-width: 800px;
+        margin: 3rem auto 2rem;
+        padding: 2rem;
+        border-top: 2px solid #444;
+        color: #bbb;
+        font-family: Georgia, serif;
+        font-size: 1.3rem;
+        line-height: 1.8;
+        text-align: center;
+        background-color: #1a1a1a;
+        border-radius: 8px;
+    }
+    .ticker-container {
+        width: 100%;
+        overflow: hidden;
+        background-color: #222;
+        border-top: 4px solid #f5c542;
+        border-bottom: 4px solid #f5c542;
+        height: 3.5rem;
+        position: relative;
+    }
+
+    .ticker-content {
+        display: inline-flex;
+        white-space: nowrap;
+        animation: ticker-scroll 30s linear infinite;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #f5c542;
+        font-family: 'Cinzel', serif;
+        line-height: 3.5rem;
+    }
+
+    .ticker-content span {
+        padding-right: 4rem; /* space between cycles */
+    }
+    @keyframes ticker-scroll {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .news-container {
+            padding: 1.2rem;
+        }
+
+        .news-container h2 {
+            font-size: 2rem;
+        }
+
+        .news-container p {
+            font-size: 1.2rem;
+        }
+
+        .lower-third {
+            font-size: 1.1rem;
+            height: 2rem;
+            padding: 0.4rem;
+        }
+        .news-message {
+            font-size: 1rem;
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<div class="news-container">
+    <h2>Things Still Happening in This World</h2>
+    <em>By: Human beings</em>
+
+    <!-- Rolling lower third #1 -->
+    <div class="ticker-container">
+        <div class="ticker-content">
+            <span>
+                   ⚠️ BREAKING: Something might happen. Stay glued to your screens.   
+                   ⚠️ UPDATE: Nothing new, but here's some random text.   
+                   ⚠️ THIS JUST IN: Distraction continues uninterrupted.    
+                   ⚠️ HEADLINE: Please keep looking at us.   
+            </span>
+            <span>
+                   ⚠️ BREAKING: Something might happen. Stay glued to your screens.   
+                   ⚠️ UPDATE: Nothing new, but here's some random text.   
+                   ⚠️ THIS JUST IN: Distraction continues uninterrupted.   
+                   ⚠️ HEADLINE: Please keep looking at us.   
+            </span>
+        </div>
+    </div>
+
+
+    <p>
+        In yet another entirely unsurprising development, some bad people did some bad things that made the lives of other people noticeably worse.
+    </p>
+
+    <p>
+        These actions, widely condemned by people who don’t hold any real power, resulted in a significant transfer of wealth, comfort, and general life satisfaction away from the many and into the grasp of the very few. The perpetrators, as usual, have issued statements that technically resemble apologies but are mostly just collections of words arranged to sound regretful.
+    </p>
+
+    <p>
+        Meanwhile, a handful of good people did good things—quietly, humbly, and usually at great personal cost. Their contributions, while deeply impactful on a small scale, were largely ignored by the public, received no media attention, and were algorithmically buried beneath trending topics such as “toaster breaks bagel in half” and “dog kind of looks like celebrity.”
+    </p>
+
+    <p>
+        Government officials responded to everything with a carefully curated blend of concern, inaction, and vague commitments to address the matter in the distant future, possibly through a committee, maybe.
+    </p>
+
+    <p>
+        In conclusion: the world continues to spin, powered mostly by despair, distraction, and a few resilient individuals yelling into the void.
+    </p>
+
+    <p>
+        More updates as things continue to happen.
+    </p>
+
+    <!-- Rolling lower third #2 -->
+    <div class="ticker-container">
+        <div class="ticker-content">
+            <span>
+                   ⚠️ URGENT: Probably not, but let’s just pretend they are. 
+                   ⚠️ TRENDING: Manufactured outrage next up. 
+                   ⚠️ REMEMBER: You blink, you miss… absolutely nothing. 
+                   ⚠️ COMING UP: The illusion of importance. 
+                   ⚠️ SPECIAL REPORT: Same story, different century.
+        </div>
+            </span>
+            <span>
+                   ⚠️ URGENT: Probably not, but let’s just pretend they are. 
+                   ⚠️ TRENDING: Manufactured outrage next up. 
+                   ⚠️ REMEMBER: You blink, you miss… absolutely nothing. 
+                   ⚠️ COMING UP: The illusion of importance. 
+                   ⚠️ SPECIAL REPORT: Same story, different century.  
+            </span>
+        </div>
+    </div>
+    <div class="news-message">
+        <p>
+            The world is loud. Headlines scream, notifications buzz, and everything demands your attention. But in the midst of all this noise, remember: it's okay to unplug.
+        </p>
+        <p>
+            Take care of yourself. Do something quiet and beautiful. Spend some quality time with maths, speaking of, can I interest you in a personal maths tutor that is also free of charge?
+        </p>
+    </div>
+
+</div>
+{% endblock %}

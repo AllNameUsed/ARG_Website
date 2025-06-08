@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Official PSA — Online Awareness{% endblock %}
+
+{% block content %}
+<style>
+  .psa-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    font-family: 'Georgia', serif;
+    color: #e0e0e0;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .psa-heading {
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #f5c542;
+  }
+
+  .psa-warning {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #ccc;
+    text-align: center;
+  }
+
+  .psa-body {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .gov-logo {
+    display: block;
+    margin: 3rem auto 0;
+    max-width: 800px;
+    width: 90%;
+    filter: grayscale(100%) contrast(1.2);
+  }
+
+  @media (max-width: 768px) {
+    .psa-heading {
+      font-size: 2rem;
+    }
+
+    .psa-warning {
+      font-size: 1.2rem;
+    }
+
+    .psa-body {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<div class="psa-container">
+  <h2 class="psa-heading">Public Service Announcement</h2>
+  <p class="psa-warning">An official message from the Australian Government regarding online safety and digital awareness.</p>
+
+  <p class="psa-body">
+    In recent months, a rise in digital scams, phishing attempts, and deceptive online practices has prompted the need for greater vigilance when browsing the internet. Australians are reminded to exercise caution when clicking unknown links, providing personal information, or engaging with unfamiliar websites.
+  </p>
+
+  <p class="psa-body">
+    That said... mate, how many websites have you visited recently that had a tab labelled <strong>"Lost and Found"</strong>? Be honest. It’s not exactly a common feature, is it? The fact that you clicked it — bold move.
+  </p>
+
+  <p class="psa-body">
+    This is your friendly reminder that curiosity is great, but in the digital world, it’s often exploited. Stay safe, stay skeptical, and maybe next time ask yourself: “Is this a trap?” Because sometimes… it absolutely is.
+  </p>
+
+  <p class="psa-body">
+    Thank you for your attention. Please report any suspicious activity to
+    <a href="{{ url_for('scamwatch') }}" style="color: #f5c542; text-decoration: underline;">Scamwatch</a>
+    or your local digital authority.
+  </p>
+
+  <img src="{{ url_for('static', filename='assets/Australian-Governement.webp') }}" alt="Australian Government Logo" class="gov-logo">
+</div>
+{% endblock %}

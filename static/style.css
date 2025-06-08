@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Baskerville', serif;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+}
+
+header.navbar {
+    background-color: #111;
+    padding: 1rem 0;
+    border-bottom: 1px solid #444;
+}
+
+.navbar-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    max-width: 95vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 1.5rem;
+}
+
+.navbar-logo {
+    width: 6vw;
+    height: auto;
+}
+
+header.navbar h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    text-align: left;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+
+footer.site-footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color: #aaa;
+    background-color: black;
+    border-top: 1px solid #444;
+    line-height: 1.6;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 1rem;
+        border: 1px solid #444;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    header.navbar h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 0.5rem 0;
+    }
+
+    .navbar-logo {
+        width: 12vw;
+    }
+    
+
+    footer.site-footer {
+        margin-top: auto;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #aaa;
+        background-color: black;
+        border-top: 1px solid #444;
+        line-height: 1.6;
+        text-align: center;
+    }
+}

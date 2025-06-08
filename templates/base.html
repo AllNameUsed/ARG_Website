@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Magic Bureau{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/navbar-logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <img src="{{ url_for('static', filename='assets/navbar-logo.png') }}" alt="Logo" class="navbar-logo">
+            <h1>Magic Bureau of Intellectual Property Infringements</h1>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/cases">Investigations</a>
+                <a href="/news">News</a>
+                <a href="/PSA">Lost & Found</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer page-container">
+        <p>
+            &copy; 2025 Magic Bureau of Intellectual Property Infringements<br>
+            All rights suspiciously reserved.<br>
+            No muggles <s>worth caring about</s> were harmed in the making of this website.
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Open Case File: Rowling, J.K.{% endblock %}
+
+{% block content %}
+<style>
+    .case-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        font-family: 'Georgia', serif;
+        color: #e0e0e0;
+        line-height: 1.8;
+    }
+
+    .case-heading {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #f54242;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .mugshot {
+        display: block;
+        max-width: 300px;
+        width: 80%;
+        margin: 2rem auto;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    }
+
+    .case-paragraph {
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .case-heading {
+            font-size: 1.8rem;
+        }
+
+        .case-paragraph {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<div class="case-container">
+    <h2 class="case-heading">Case File #39427 – Rowling, Joanne Kathleen</h2>
+
+    <img src="{{ url_for('static', filename='assets/most-wanted.jpg') }}" alt="Mug Shot of Suspect" class="mugshot">
+
+    <p class="case-paragraph">
+        The Magic Bureau of Intellectual Property Infringements (MBIPI) has opened a formal investigation into the
+        actions of demonic author <strong>J.K. Rowling</strong>, who stands accused of extensive magical plagiarism.
+    </p>
+
+    <p class="case-paragraph">
+        The suspect is believed to have extracted — without consent — the biographical details, adventures, and magical
+        experiences of <strong>Senior Agent Parry Hotter</strong>, currently serving with distinction in the Bureau’s
+        Department of Wand-Related Incidents. Multiple parallels between Agent Hotter’s documented life and the so-called
+        “Harry Potter” book series have been identified, including but not limited to: owls, platform-based teleportation,
+        troll altercations, and the illegal naming of a powerful dark wizard.
+    </p>
+
+    <p class="case-paragraph">
+        In addition to unauthorised narrative extraction, the suspect has also demonstrated a consistent pattern of
+        increasingly public alignment with <em>non-magical extremist ideologies</em>, raising significant concern about
+        her ongoing influence over impressionable muggle populations.
+    </p>
+
+    <p class="case-paragraph">
+        A formal cease-and-desist scroll has been dispatched via phoenix courier. The suspect remains under watch and has
+        been added to the MBIPI’s <strong>Most Wanted for Narrative Theft and Bigotry Watchlist</strong>.
+    </p>
+
+    <p class="case-paragraph">
+        Citizens are advised not to engage the suspect in discourse, especially online. All sightings should be reported
+        to your nearest magical authority or directly via enchanted parchment.
+    </p>
+</div>
+{% endblock %}

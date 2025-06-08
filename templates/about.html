@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}About the Bureau{% endblock %}
+
+{% block content %}
+<style>
+    .about-container {
+        max-width: 1000px;
+        margin: 4rem auto;
+        padding: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .about-image {
+        flex: 0 0 250px;
+        max-width: 250px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        margin-top: 8rem;
+    }
+
+    .about-text {
+        flex: 1;
+    }
+
+    .about-text h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .about-text a {
+        color: #f5c542;
+        text-decoration: underline;
+    }
+
+    .about-text a:hover {
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.1rem;
+            padding: 1rem;
+        }
+
+        .about-image {
+            max-width: 70%;
+            margin-top: 0rem;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<div class="about-container">
+    <img src="{{ url_for('static', filename='assets/Newton.webp') }}" alt="Isaac Newton Portrait" class="about-image">
+
+    <div class="about-text">
+        <h2>About the Bureau</h2>
+
+        <p>
+            Our founder, the Grand Wizard Sir Isaac Newton, was born on 4 January 1643 under an especially mysterious star.
+            He was a renowned alchemical theorist, transdimensional apple observer, and the first mortal to successfully command the sacred force of “gRaVItY”.
+            Newton's work in light magic — splitting sunbeams with enchanted prisms — laid the foundation for modern illumination rituals and celestial ray-bending.
+            His treatises on motion remain mandatory spellbooks in most licensed broomstick academies.
+        </p>
+
+        <p>
+            In his later years, Newton delved deeper into the esoteric arts, pursuing the ancient discipline of alchemistry and discovering the sacred correspondences between letters, numbers, and the raw chaos of the cosmos.
+            It was through this mystical research that he pioneered the now-common practice of sigil crafting — using
+            <a href="https://suspha.github.io/numerology/?ref=thehalalplanet.com" target="_blank">Pythagorean numerology</a>
+            to transmute ordinary names into powerful glyphs that whispered secrets to the divine.
+            Some say his chalk circles are still spinning in parallel dimensions.
+        </p>
+
+        <p>
+            Oh yeah, after he founded the Bureau to protect his intellectual properties, I guess a bunch of other stuff happened for the next few hundred years, doesn't matter, who cares, whatevs man.
+        </p>
+    </div>
+</div>
+{% endblock %}

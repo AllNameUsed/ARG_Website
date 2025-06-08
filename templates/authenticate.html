@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Authentication Required{% endblock %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    .auth-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    .auth-heading {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: #f5c542;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .password-display {
+        width: 250px;
+        height: 50px;
+        background-color: #222;
+        color: #fff;
+        font-size: 2rem;
+        letter-spacing: 10px;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #555;
+        /* font-family: monospace; */
+        font-family: 'Cinzel', serif;
+    }
+
+    .numpad {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .numpad button {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8rem;
+        border-radius: 10px;
+        background-color: #333;
+        color: white;
+        border: 2px solid #666;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: 'Cinzel', serif;
+    }
+
+    .numpad button:hover {
+        background-color: #555;
+    }
+
+    @media (max-width: 600px) {
+        .auth-heading {
+            font-size: 2rem;
+        }
+
+        .numpad button {
+            width: 60px;
+            height: 60px;
+            font-size: 1.4rem;
+        }
+
+        .password-display {
+            width: 200px;
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<div class="auth-container">
+    <h2 class="auth-heading">Authentication required</h2>
+    <div id="password-display" class="password-display"></div>
+    <div id="meme-container" style="display: none; margin-top: 2rem;">
+        <img id="meme-gif" src="{{ url_for('static', filename='assets/failed.gif') }}" alt="Wrong!" style="max-width: 100%; border-radius: 10px;">
+    </div>
+
+    <div class="numpad">
+        {% for num in range(1, 10) %}
+            <button onclick="press('{{ num }}')">{{ num }}</button>
+        {% endfor %}
+        <button onclick="clearInput()">CLR</button>
+        <button onclick="press('0')">0</button>
+        <button onclick="submitPassword()">ETR</button>
+    </div>
+</div>
+
+<script>
+    let input = "";
+
+    function press(num) {
+        if (input.length < 9) {
+            input += num;
+            updateDisplay();
+        }
+    }
+
+    function clearInput() {
+        input = "";
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        document.getElementById("password-display").textContent = "*".repeat(input.length);
+    }
+
+    function submitPassword() {
+        if (input === "753175") {
+            document.cookie = "muggle=authenticated; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
+            window.location.href = "/authenticated";
+        } else {
+            showMeme();
+        }
+    }
+
+    function showMeme() {
+        // Show alert first        
+        alert("Incorrect incantation! You are not a Muggle, are you??");
+
+        // Hide numpad and password display
+        document.querySelector('.numpad').style.display = 'none';
+        document.getElementById('password-display').style.display = 'none';
+
+        // Show meme
+        document.getElementById('meme-container').style.display = 'block';
+
+        // Reset everything after 5 seconds
+        setTimeout(() => {
+            clearInput();
+            document.getElementById('meme-container').style.display = 'none';
+            document.querySelector('.numpad').style.display = 'grid';
+            document.getElementById('password-display').style.display = 'flex';
+        }, 3500);
+    }
+
+</script>
+{% endblock %}

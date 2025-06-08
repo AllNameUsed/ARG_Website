@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Bureau of Intellectual Property Infringements</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/logo.png') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: black;
+            font-family: 'Libre Baskerville', serif;
+            color: white;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        img.logo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .bureau-title {
+            font-size: 5.5rem;
+            font-weight: bold;
+            margin: 0 0 3rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .choice-button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .choice-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .bureau-title {
+                font-size: 1.6rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .choice-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+        .site-footer {
+            margin-top: auto;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aaa;
+            background-color: black;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .site-footer {
+                margin-top: auto;
+                padding: 1rem 2rem;
+                text-align: center;
+                font-size: 0.8rem;
+                color: #aaa;
+                background-color: black;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content-wrapper">
+        <img class="logo" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Magic Bureau Logo">
+        <div class="bureau-title">Magic Bureau of Intellectual Property Infringements</div>
+        <h1>Do you identify as a muggle?</h1>
+        <form action="/" method="post">
+            <button class="choice-button" name="choice" value="yes">Yes</button>
+            <button class="choice-button" name="choice" value="no">No</button>
+        </form>
+
+    </div>
+    <footer class="site-footer">
+    <p>
+        &copy; 2025 Magic Bureau of Intellectual Property Infringements<br>
+        All rights suspiciously reserved.<br>
+        No muggles <s>worth caring about</s> were harmed in the making of this website.
+    </p>
+</footer>
+</body>
+</html>

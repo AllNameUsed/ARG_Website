@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Access Denied{% endblock %}
+
+{% block content %}
+<style>
+    h2 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .muggle-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* padding: 2rem 1rem; */
+    }
+
+    .muggle-heading {
+        color: #ff5555;
+        font-size: 4rem;
+    }
+
+    .muggle-text {
+        font-size: 1.5rem;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .muggle-stamp {
+        width: 60%;
+        max-width: 600px;
+        height: auto;
+        margin: 2rem 0;
+        filter: drop-shadow(2px 4px 6px #000);
+    }
+
+    .muggle-lol {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        font-style: italic;
+        color: #222;
+    }
+
+    .muggle-button {
+        margin-top: 2.5rem;
+        padding: 1.2rem 2.5rem;
+        font-size: 1.6rem;
+        color: black;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .muggle-button:hover {
+        background-color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+        h2,
+        .muggle-heading {
+            font-size: 2.2rem;
+        }
+
+        .muggle-text {
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+        }
+
+        .muggle-lol {
+            font-size: 1.5rem;
+        }
+
+        .muggle-button {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+    }
+
+    .emphasis {
+        text-transform: uppercase;
+        color: #f5c542;
+        letter-spacing: 1px;
+    }
+</style>
+
+<div class="muggle-container">
+    <h2 class="muggle-heading">Access Denied</h2>
+    <p class="muggle-text">
+        You have voluntarily identified yourself as a
+        <span class="emphasis">non-magical entity</span>
+        <em>(colloquially: "muggle")</em>.
+    </p>
+
+    <p class="muggle-text">
+        In accordance with <span class="emphasis">Regulation 42B, Subsection 9</span> of the
+        <em>Magical Concealment Accord</em>, all self-declared muggles are hereby
+        <span class="emphasis">prohibited</span> from accessing enchanted materials or classified spellwork.
+    </p>
+    <img src="{{ url_for('static', filename='assets/denied.png') }}" class="muggle-stamp" alt="Access Denied">
+    <p class="muggle-lol">LOL! Best of luck with your muggle life, mate!</p>
+    <p class="muggle-text">
+        <em>Appeals must be submitted via owl posts, astral projections into the Complaints Dimension,<br>
+        and a notarised ritual involving the tears of three sworn enemies — submitted in triplicate and under full moon conditions.</em>
+    </p>
+</div>
+{% endblock %}
