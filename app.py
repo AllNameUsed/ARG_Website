@@ -97,5 +97,9 @@ def scamwatch():
 def endgame():
     return render_template("authenticated.html")
 
+@app.route("/appeal")
+def appeal():
+    return render_template("appeal.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

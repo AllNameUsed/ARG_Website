@@ -30,7 +30,7 @@
   }
 
   .psa-body {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
 
@@ -52,13 +52,14 @@
     }
 
     .psa-body {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
   }
 </style>
 
 <div class="psa-container">
   <h2 class="psa-heading">Public Service Announcement</h2>
+  <img src="{{ url_for('static', filename='assets/Australian-Governement.webp') }}" alt="Australian Government Logo" class="gov-logo">
   <p class="psa-warning">An official message from the Australian Government regarding online safety and digital awareness.</p>
 
   <p class="psa-body">
@@ -79,6 +80,5 @@
     or your local digital authority.
   </p>
 
-  <img src="{{ url_for('static', filename='assets/Australian-Governement.webp') }}" alt="Australian Government Logo" class="gov-logo">
 </div>
 {% endblock %}

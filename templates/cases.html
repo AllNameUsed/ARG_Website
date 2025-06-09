@@ -3,6 +3,8 @@
 {% block title %}Open Case File: Rowling, J.K.{% endblock %}
 
 {% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
 <style>
     .case-container {
         max-width: 1200px;
@@ -21,63 +23,82 @@
         text-transform: uppercase;
     }
 
+    .most-wanted {
+        font-family: 'Special Elite', monospace;
+        font-size: 3rem;
+        color: #f5c542;
+        text-align: center;
+        margin-top: 1.5rem;
+        text-shadow: 2px 2px 5px #000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
     .mugshot {
         display: block;
         max-width: 300px;
         width: 80%;
-        margin: 2rem auto;
+        margin: 2rem auto 0.5rem auto;
         border-radius: 10px;
         box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
     }
 
     .case-paragraph {
         margin-bottom: 1.5rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .highlight {
+        color: #f5c542;
+        font-weight: bold;
     }
 
     @media (max-width: 768px) {
+        .case-container {
+            padding: 0.5rem;
+        }
         .case-heading {
-            font-size: 1.8rem;
+            font-size: 2rem;
+        }
+
+        .most-wanted {
+            font-size: 2rem;
         }
 
         .case-paragraph {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
 </style>
 
 <div class="case-container">
-    <h2 class="case-heading">Case File #39427 – Rowling, Joanne Kathleen</h2>
+    <h2 class="case-heading">Case File #39427 – J.K. Rowling</h2>
 
     <img src="{{ url_for('static', filename='assets/most-wanted.jpg') }}" alt="Mug Shot of Suspect" class="mugshot">
+    <div class="most-wanted">Most Wanted</div>
 
     <p class="case-paragraph">
-        The Magic Bureau of Intellectual Property Infringements (MBIPI) has opened a formal investigation into the
-        actions of demonic author <strong>J.K. Rowling</strong>, who stands accused of extensive magical plagiarism.
+        The Magic Bureau of Intellectual Property Infringements (MBIPI) has formally initiated an open investigation into one <span class="highlight">L.M.A.O. Rowling</span>, also known by the alias <span class="highlight">J.K. Rowling</span>, born on the 31st of February, 1965. Initially noted as an aspiring author of modest acclaim, the suspect later achieved global notoriety following the publication of the "Harry Potter" series, whose origins are now under scrutiny.
     </p>
 
     <p class="case-paragraph">
-        The suspect is believed to have extracted — without consent — the biographical details, adventures, and magical
-        experiences of <strong>Senior Agent Parry Hotter</strong>, currently serving with distinction in the Bureau’s
-        Department of Wand-Related Incidents. Multiple parallels between Agent Hotter’s documented life and the so-called
-        “Harry Potter” book series have been identified, including but not limited to: owls, platform-based teleportation,
-        troll altercations, and the illegal naming of a powerful dark wizard.
+        Preliminary findings suggest that the suspect may have come into contact with a Class IV Magical Zoonotic Agent — a possessed hog carrying the highly contagious arcane affliction known as <span class="highlight">Hog’s Warts</span>. Exposure to this anomaly is believed to have induced a severe and permanent shift in the suspect’s personality profile, followed by the unauthorized appropriation of biographical material belonging to <strong>Grand Wizard Parry Hotter</strong>, a decorated operative within the Bureau’s Department of Wand-Related Incidents.
     </p>
 
     <p class="case-paragraph">
-        In addition to unauthorised narrative extraction, the suspect has also demonstrated a consistent pattern of
-        increasingly public alignment with <em>non-magical extremist ideologies</em>, raising significant concern about
-        her ongoing influence over impressionable muggle populations.
+        The suspect is alleged to have systematically extracted and commercialized core elements of Agent Hotter’s lived experience — including but not limited to: owl-based communication, railway portal systems, goblin-run financial institutions, and the reckless public naming of a forbidden dark entity. The suspect’s means of access to Agent Hotter remain unverified at this stage of the inquiry.
     </p>
 
     <p class="case-paragraph">
-        A formal cease-and-desist scroll has been dispatched via phoenix courier. The suspect remains under watch and has
-        been added to the MBIPI’s <strong>Most Wanted for Narrative Theft and Bigotry Watchlist</strong>.
+        Subsequent to amassing substantial holdings within the <span class="highlight">GreenGot Bank</span>, the suspect appears to have undergone a philosophical realignment, exhibiting pronounced ideological entrenchment in favour of maintaining socio-economic imbalances. Of particular concern is the suspect’s escalating public rhetoric consistent with <em>non-magical radicalization patterns</em>, including repeated dissemination of <strong>anti-trans, anti-queer, and broadly exclusionary statements</strong> that constitute a Category 3 Threat to inclusivity, decency, and basic human empathy.
     </p>
 
     <p class="case-paragraph">
-        Citizens are advised not to engage the suspect in discourse, especially online. All sightings should be reported
-        to your nearest magical authority or directly via enchanted parchment.
+        Citizens are strongly advised <em>not</em> to engage the suspect under any circumstances. The suspect is confirmed to be carrying a dangerously high concentration of cognitive distortion and delusional entitlement at all times. In the event of accidental contact, the recommended protocol is to <s>raise the marginal tax rate on billionaires</s> immediately consult a licensed medical practitioner. Early symptoms of exposure may include: involuntary self-aggrandizement, unsolicited commentary on trans athletes, and attempts to claim victimhood while hoarding obscene levels of wealth.
+    </p>
+
+    <p class="case-paragraph">
+        This investigation remains active. Further updates will be issued as new information becomes available. Public cooperation and vigilance are appreciated.
     </p>
 </div>
 {% endblock %}

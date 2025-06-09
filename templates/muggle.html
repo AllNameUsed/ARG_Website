@@ -104,8 +104,10 @@
     <img src="{{ url_for('static', filename='assets/denied.png') }}" class="muggle-stamp" alt="Access Denied">
     <p class="muggle-lol">LOL! Best of luck with your muggle life, mate!</p>
     <p class="muggle-text">
-        <em>Appeals must be submitted via owl posts, astral projections into the Complaints Dimension,<br>
-        and a notarised ritual involving the tears of three sworn enemies — submitted in triplicate and under full moon conditions.</em>
+        <em>
+            <a href="{{ url_for('appeal') }}" class="emphasis"> Appeals</a> must be submitted via owl posts, astral projections into the Complaints Dimension,<br>
+            and a notarised ritual involving the tears of three sworn enemies — submitted in triplicate and under full moon conditions.
+        </em>
     </p>
 </div>
 {% endblock %}
