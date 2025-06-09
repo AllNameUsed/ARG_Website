@@ -57,6 +57,13 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
         font-family: 'Cinzel', serif;
+        
+        /* Fix alignment */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        padding: 0;
     }
 
     .numpad button:hover {
@@ -72,6 +79,13 @@
             width: 60px;
             height: 60px;
             font-size: 1.4rem;
+            
+            /* Ensure mobile buttons are also centered */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            padding: 0;
         }
 
         .password-display {
