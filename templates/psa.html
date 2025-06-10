@@ -42,6 +42,13 @@
     filter: grayscale(100%) contrast(1.2);
   }
 
+  .muggle-lol {
+      font-size: 2rem;
+      font-style: italic;
+      color: #222;
+      text-align: center;
+  }
+
   @media (max-width: 768px) {
     .psa-heading {
       font-size: 2rem;
@@ -54,11 +61,19 @@
     .psa-body {
       font-size: 1.2rem;
     }
+
+    .muggle-lol {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #222;
+      text-align: center;
+    }
   }
 </style>
 
 <div class="psa-container">
   <h2 class="psa-heading">Public Service Announcement</h2>
+  <p class="muggle-lol">-*** --- ---</p>
   <img src="{{ url_for('static', filename='assets/Australian-Governement.webp') }}" alt="Australian Government Logo" class="gov-logo">
   <p class="psa-warning">An official message from the Australian Government regarding online safety and digital awareness.</p>
 
